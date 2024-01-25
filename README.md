@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# NASA Demo Project
+
+## Introduction
+
+This is a demo project to showcase my knowledge of React, Next, Typescript, Tailwind and Jest using the NASA APOD API to get the backend data.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Node.js: You need Node.js to run this project, as it's a JavaScript runtime. You can download it from [here](https://nodejs.org/).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. npm or Yarn: These are package managers for the Node.js environment. They come bundled with Node.js, so you don't need to install them separately.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. A code editor: You need a code editor to write and edit your code. Visual Studio Code is a good option, and you can download it from [here](https://code.visualstudio.com/).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Git: You need Git for version control. You can download it from [here](https://git-scm.com/).
 
-## Learn More
+5. Knowledge of React, Next.js, TypeScript, Tailwind CSS, and Jest: You should be familiar with these technologies to understand and modify the code.
 
-To learn more about Next.js, take a look at the following resources:
+To see the specific versions of each technology refer to [this file](./package.json)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To install the project run this commands:
 
-## Deploy on Vercel
+    git clone https://github.com/diego-portillo/nasa-project.git
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    cd nasa-project
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    npm install
+
+    npm run dev
+
+
+
+## Usage
+
+This application consists of several pages:
+
+1. **Home Page**: This is the landing page of the application in the / path. It provides an overview of the application and its links.
+
+2. **About Page**: This page provides information about the APOD API in the /about path.
+
+3. **Today Page**: Each day a different picture is published in the API so this section shows the image of the day in the /today path.
+
+4. **Date Page**: This page takes the date you put in the path /date/YYYY-MM-DD to explore pictures of other dates.
+
+
+## License
+
+The content of the pages uses NASA API: https://apod.nasa.gov/apod/astropix.html
+

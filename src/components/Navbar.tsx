@@ -2,8 +2,17 @@
  
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
+  const [date, setDate] = useState('');
+  const router = useRouter();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    router.push(`/date/${date}`);
+  };
     const pathname = usePathname()
  
     return (
@@ -23,26 +32,16 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        {/* <div className="flex-2 navbar_search">
-                
-                <input
-                
-                className='m-1 border rounded text-gray-500 p-1'
-                type="date"
-                    placeholder="Start Date"
-                    // value={startDate}
-                    // onChange={(e) => setStartDate(e.target.value)}
-                />
-                <input
-                
-                className='m-1 border rounded text-gray-500 p-1'
-                    type="date"
-                    placeholder="End Date"
-                    // value={endDate}
-                    // onChange={(e) => setEndDate(e.target.value)}
-                />
-                <button className='text-black bg-white p-2 border rounded-full' >Search</button>
-            </div> */}
+        <div className="flex-2 navbar_search">
+        <form onSubmit={handleSearch}>
+            <input className='m-1 border rounded text-gray-500 p-1'
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+            <button className='text-black bg-white p-2 border rounded-full' type="submit">Search</button>
+          </form>
+        </div>
       </nav>
     );
 
