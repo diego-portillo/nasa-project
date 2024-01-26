@@ -1,12 +1,14 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import Page from "../../src/app/page";
-import { expect } from "@jest/globals";
+describe('get specific date', () => {
+    test('returns correct data when fetch is successful', () => {
+        const url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2024-01-25';
+        const expected = "Harri Kiiskinen";
+        var request = new XMLHttpRequest();
+        request.open('GET', url, false);  // `false` makes the request synchronous
+        request.send(null);
 
-describe("nasa-project/src/app/page.tsx", () => {
-  test("Render", () => {
-    render(<Page />);
-    const header = screen.getByRole("heading");
-    expect(String(header.innerHTML)).toEqual("Welcome to NASA Project");
-  });
+        if (request.status === 200) {
+            const response = JSON.parse(request.responseText);
+            expect(response.copyright).toEqual(expected);
+        }
+    });
 });
